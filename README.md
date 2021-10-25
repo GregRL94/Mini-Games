@@ -25,6 +25,14 @@ No specific packages (which are not included in the base python libraries)
 
 Play Hangman with a randomly choosen word, or a word choosen by a friend.
 - Requirements:
-	- termcolor
+	- **termcolor**
 
 ![hangman](https://github.com/GregRL94/Handy-Scripts/blob/master/resources/hangman_cmd.png?raw=true)
+
+## Connect4
+![connect4](https://github.com/GregRL94/Handy-Scripts/blob/master/resources/connect4.png?raw=true)
+- Summary:
+
+Play Connect4 agaisnt a friend.
+- Requirements:
+	- **termcolor**
