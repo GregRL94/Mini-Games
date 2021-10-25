@@ -114,7 +114,7 @@ class Lotery:
             for player, ticket_list in self.players.items():
                 print(player, "registered with:", str(len(ticket_list)))
                 print(ticket_list, "\n")
-        else
+        else:
             return
         _ = input("Press Enter to proceed with the loterw results")
 
