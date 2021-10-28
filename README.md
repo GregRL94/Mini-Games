@@ -36,3 +36,5 @@ Play Hangman with a randomly choosen word, or a word choosen by a friend.
 Play Connect4 agaisnt a friend.
 - Requirements:
 	- **termcolor**
+
+![connect4](https://github.com/GregRL94/Handy-Scripts/blob/master/resources/connect4_cmd.PNG?raw=true)

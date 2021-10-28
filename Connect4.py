@@ -6,24 +6,36 @@ from termcolor import colored
 File name : Connect4.py
 Author: Grégory LARGANGE
 Date of creation : 01/15/2021
-Date of last modification : 01/15/2021
+Date of last modification : 10/28/2021
 
 Summary:
 Play connect 4 against a friend with this script!
 """
 
+
 def rules():
-    print(" ======================== WELCOME TO CONNECT 4 ! ================================")
-    print("Connect 4 consist of a 6 * 7 board. To win a player must align 4 of its pieces, either vertically,")
-    print("horizontaly or diagonaly. Players cannot choose their playing row but only the column.")
-    print("The only way to play on a row is by stacking pieces until the next piece land on the desired row.")
+    print(
+        " ======================== WELCOME TO CONNECT 4 ! ================================"
+    )
+    print(
+        "Connect 4 consist of a 6 * 7 board. To win a player must align 4 of its pieces, either vertically,"
+    )
+    print(
+        "horizontaly or diagonaly. Players cannot choose their playing row but only the column."
+    )
+    print(
+        "The only way to play on a row is by stacking pieces until the next piece land on the desired row."
+    )
     print("")
     print("Playable columns from 0 to 6 included")
     print("PLAYER 1 PIECE: O")
     print("PLAYER 2 PIECE: X")
-    print("=============================== GOOD LUCK ! =====================================")
+    print(
+        "=============================== GOOD LUCK ! ====================================="
+    )
     print("")
     print("")
+
 
 def drawBoard(field):
     columns = 15
@@ -57,14 +69,24 @@ def drawBoard(field):
                     # Only one out of two columns is really playable, so we divide by two
                     # to get the playable columns. We cast the result to int to avoid errors.
                     playableColumn = int(column / 2)
-                    print(field[playableRow][playableColumn], end = "")
+                    colored_piece = (
+                        colored(
+                            field[playableRow][playableColumn], "green", attrs=["bold"]
+                        )
+                        if field[playableRow][playableColumn] == "O"
+                        else colored(
+                            field[playableRow][playableColumn], "red", attrs=["bold"]
+                        )
+                    )
+                    print(colored_piece, end="")
                 else:
                     if column != (columns - 1):
-                        print("|", end = "")
+                        print("|", end="")
                     else:
                         print("|")
             else:
                 print("-" * 15)
+
 
 def checkWin(board, line, column):
     piece = board[line][column]
@@ -212,18 +234,22 @@ def checkWin(board, line, column):
     #############################################
     return winner
 
+
 def determineWinner(piece):
     if piece == "O":
         return "PLAYER 1"
     return "PLAYER 2"
 
+
 def play():
-    currentField = [[" ", " ", " ", " ", " ", " ", " "],
-                    [" ", " ", " ", " ", " ", " ", " "],
-                    [" ", " ", " ", " ", " ", " ", " "],
-                    [" ", " ", " ", " ", " ", " ", " "],
-                    [" ", " ", " ", " ", " ", " ", " "],
-                    [" ", " ", " ", " ", " ", " ", " "]]
+    currentField = [
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+    ]
     player = 1
     filledTreshold = 7
 
@@ -237,7 +263,7 @@ def play():
         while validColumn is False:
             try:
                 playColumn = int(input("Choose a column to play at: "))
-                if playColumn < 0 or playColumn > 6 :
+                if playColumn < 0 or playColumn > 6:
                     print("The column does not exist, you can not play here!")
                 elif currentField[0][playColumn] != " ":
                     print("This column is full, you can not play here!")
@@ -251,16 +277,14 @@ def play():
         if player == 1:
             for row in range(5, -1, -1):
                 if currentField[row][playColumn] == " ":
-                    coloredPiece = colored("0", "green", attrs=["bold"])
-                    currentField[row][playColumn] = coloredPiece
+                    currentField[row][playColumn] = "O"
                     playRow = row
                     break
             player = 2
         else:
             for row in range(5, -1, -1):
                 if currentField[row][playColumn] == " ":
-                    coloredPiece = colored("X", "red", attrs=["bold"])
-                    currentField[row][playColumn] = coloredPiece
+                    currentField[row][playColumn] = "X"
                     playRow = row
                     break
             player = 1
@@ -268,7 +292,7 @@ def play():
         drawBoard(currentField)
         # Determine if there is a winner after each play
         winner = checkWin(currentField, playRow, playColumn)
-        if not winner is None:
+        if winner:
             print(winner, " WINS !")
             break
         # Determine if the game is a draw due to board being filled after each play
@@ -276,10 +300,11 @@ def play():
             if currentField[0][column] == " ":
                 break
             else:
-                filledCounter +=1
+                filledCounter += 1
         if filledCounter == filledTreshold:
             print("BOARD IS FILLED, IT'S A DRAW!")
             break
+
 
 rules()
 play()
