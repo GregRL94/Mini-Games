@@ -37,4 +37,4 @@ Play Connect4 agaisnt a friend.
 - Requirements:
 	- **termcolor**
 
-![connect4](https://github.com/GregRL94/Handy-Scripts/blob/master/resources/connect4_cmd.PNG?raw=true)
+![connect4](https://github.com/GregRL94/Handy-Scripts/blob/master/resources/connect4_cmd.png?raw=true)
