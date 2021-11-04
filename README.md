@@ -1,6 +1,6 @@
-# The Handy-Scripts repository
+# The Mini-Games repository
 
-This repository contains a collection of small scripts I have made, whether as homework for courses, or for friends, or for me, and thought they might come handy for some. It ranges from small games like lotery and hangman to utility scripts like a sum-up for pylint warnings.
+This repository contains a collection of small scripts I have made, whether as homework for courses, or for friends, or for me, and thought they might come handy for some. It ranges from small games like lotery and hangman.
 
 # Requirements
 
@@ -33,7 +33,7 @@ Play Hangman with a randomly choosen word, or a word choosen by a friend.
 ![connect4](https://github.com/GregRL94/Handy-Scripts/blob/master/resources/connect4.PNG?raw=true)
 - Summary:
 
-Play Connect4 agaisnt a friend.
+Play Connect4 against a friend.
 - Requirements:
 	- **termcolor**
 
