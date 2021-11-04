@@ -1,6 +1,6 @@
 # The Mini-Games repository
 
-This repository contains a collection of small scripts I have made, whether as homework for courses, or for friends, or for me, and thought they might come handy for some. It ranges from small games like lotery and hangman.
+This repository contains a collection of small scripts I have made, whether as homework for courses, or for friends, or for me, and thought they might be fun. It is a selection of common mini-games, fast to play and easy to understand.
 
 # Requirements
 
